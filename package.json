@@ -1,17 +1,17 @@
 {
   "name": "teste-mobile",
   "version": "1.0.0",
-  "description": "",
+  "description": "Teste Mobile",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./wdio.conf.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jessica Teixeira Araujo",
   "license": "ISC",
   "dependencies": {
-    "@wdio/cli": "^8.8.6"
+    "@wdio/cli": "^8.12.2"
   },
   "devDependencies": {
     "@wdio/local-runner": "^8.8.6",
