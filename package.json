@@ -11,7 +11,8 @@
   "author": "Jessica Teixeira Araujo",
   "license": "ISC",
   "dependencies": {
-    "@wdio/cli": "^8.12.2"
+    "@wdio/cli": "^8.12.2",
+    "webdriverio": "^8.12.1"
   },
   "devDependencies": {
     "@wdio/local-runner": "^8.8.6",
