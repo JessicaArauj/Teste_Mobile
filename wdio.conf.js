@@ -19,3 +19,4 @@ exports.config = {
         "appPackage": "com.wdiodemoapp"
     }]
 }
+
