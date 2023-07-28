@@ -4,6 +4,7 @@ exports.config = {
     hostname: '127.0.0.1', // ip local
     port: 4723,
     path: '/wd/hub',
+    waitForTimeout: 20000,
     specs: [
         './test/specs/**/*spec.js'
     ],
@@ -11,12 +12,14 @@ exports.config = {
     capabilities:[{
         "platformName": "Android",
         "platformVersion": "9.0",
-        "deviceName": "ebac-qa",
+        "deviceName": "ebac-qe",
         "automationName": "UiAutomator2",
-        "app": join(process.cwd(), './app/android/Android-NativeDemoApp-0.4.0.apk'),
-        "appWaitActivity": '.MainActivity',
-        "appActivity": ".SplashActivity", 
-        "appPackage": "com.wdiodemoapp"
-    }]
+        "app": join(process.cwd(), './app/android/loja-ebac.apk'),
+        "appWaitActivity": 'com.woocommerce.android.ui.login.LoginActivity',
+        "appActivity": ".ui.main.MainActivity", 
+        "appPackage": "com.woocommerce.android"
+    }],
+    mochaOpts: {
+        timeout: 300000
+    },
 }
-

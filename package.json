@@ -1,7 +1,7 @@
 {
   "name": "teste-mobile",
   "version": "1.0.0",
-  "description": "Teste Mobile",
+  "description": "Test mobile advanced e device farm",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,9 @@
   "author": "Jessica Teixeira Araujo",
   "license": "ISC",
   "dependencies": {
+    "@wdio/allure-reporter": "^8.12.3",
     "@wdio/cli": "^8.12.2",
+    "wdio-video-reporter": "^4.0.3",
     "webdriverio": "^8.12.1"
   },
   "devDependencies": {
