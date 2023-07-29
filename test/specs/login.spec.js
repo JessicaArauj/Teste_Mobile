@@ -1,41 +1,23 @@
-const homeScreen = require("../screens/home.screen")
-const LoginScreen = require("../screens/login.screen")
-const menuStore = require("../screens/ebacStore.scren")
-const menuProducts = require("../screens/products.screen")
-const addProduct = require("../screens/addProduct.screen");
-
+const homeScreen = require("../screens/home.screen");
+const loginScreen = require("../screens/login.screen");
+const myStoreScreen = require("../screens/myStore.screen");
 
 let urlStore = 'http://lojaebac.ebaconline.art.br/'
 let user = 'gerente'
 let pass = 'GD*peToHNJ1#c$sgk08EaYJQ'
 
-describe('Access and product registration in the Ebac-Shop store', () => {
-   
-    it('You must access and register a product', async () => {
-        await homeScreen.accessLogin()
-        await LoginScreen.insertUrlLoja(urlStore)
-        await LoginScreen.continue()
-        await LoginScreen.continueCredentials()
-        await LoginScreen.login(user, pass)
-        await LoginScreen.valida2FA()
-        await LoginScreen.twoFactorLogin(pass)
+describe('Access Admin Panel', () => {
+    it('shoud login with valid credentials', async() => {
+        await homeScreen.goToLogin()
+        await loginScreen.setStoreAddress(urlStore)
+        await loginScreen.continue()
+        await loginScreen.login(user, pass)
+        await loginScreen.goToTwoFactorAuth()
+        await loginScreen.twoFactorLogin(pass)
 
-        expect(await menuStore.logoStoreVisible()).toBeTruthy()
-        expect(await menuStore.checkNameStore()).toEqual('EBAC - Shop')
-
-        await menuStore.accessproducts()
-        await menuProducts.typeProduct()   
-
-        await addProduct.addImage()    
-        await newProductScreeen.productTitle()      
-        await newProductScreeen.describeProduct()      
-        await newProductScreeen.addValue()
-        await newProductScreeen.addStorage()
-        await newProductScreeen.addDetails()
-        await newProductScreeen.addSend()
-        await newProductScreeen.addSend()
-        await newProductScreeen.options()
-
-        expect(await newProductScreeen.checkProduct()).toEqual('View product on store')
+        expect(await myStoreScreen.myStoreLogoIsDisplayed()).toBeTruthy()
+        expect(await myStoreScreen.getStoreName()).toEqual('EBAC - SHOP')
     });
-})
+
+    
+});

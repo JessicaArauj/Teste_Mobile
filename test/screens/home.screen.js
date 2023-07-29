@@ -1,11 +1,10 @@
-class homeScreen {
-    get #urlStore(){
-        return $('id:button_login_store')
-    }
+class HomeScreen {
 
-    async accessLogin(){
-        await this.#urlStore.click()
+    get #enterStoreAddress () { return $('id:button_login_store') }
+
+    async goToLogin(){
+        await this.#enterStoreAddress.click()
     }
 }
 
-module.exports = new homeScreen()
+module.exports = new HomeScreen()
