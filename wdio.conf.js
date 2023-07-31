@@ -1,5 +1,4 @@
 const {join} = require('path')
-
 exports.config = {
     hostname: '127.0.0.1', // ip local
     port: 4723,
